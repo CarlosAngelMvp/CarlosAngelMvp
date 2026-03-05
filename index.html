@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Te Quiero Aly 💖</title>
+  <title>Te Amo Tyra 💖</title>
   <style>
     body {
       margin: 0;
@@ -63,17 +63,14 @@
 <body>
 <canvas id="canvas"></canvas>
 <div class="overlay">
-  <div class="center-message">ALY💖</div>
-  <div class="center-message">TE QUIERO 🥺💖</div>
+  <div class="center-message">TYRA 💖</div>
+  <div class="center-message">TE AMO 💘💖</div>
 </div>
 
-<!-- Cursor personalizado -->
 <img id="cursor" class="heart-cursor" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmY2OWI0IiBkPSJNNDcuNiAyNUMyNS4xIDI1IDcgNDMuMSA3IDY1LjZDNyA4OC4xIDI0LjMgMTI3IDkzLjUgMTU3LjVjNjkuMiAzMC41IDE0Ni4zIDY0LjEgMTYxLjUgODQuMSAxNS4yLTIwIDEwMC4xLTUzLjYgMTY5LjMtODQuMSA2OS4yLTMwLjUgODYuNS02OS40IDg2LjUtOTEuOSAwLTIyLjUtMTguMS00MC42LTQwLjYtNDAuNnMtNDAuNiAxOC4xLTQwLjYgNDAuNmMwIDguMSAxLjYgMTUuNSA0LjMgMjIuMi0zLjEgMi4yLTYuNyAzLjUtMTAuNyAzLjUtMTMuOCAwLTI1LTExLjItMjUtMjVzMTEuMi0yNSAyNS0yNWM4LjEgMCAxNS41IDMuOSAyMC4yIDEwLjIgMTEuNy0xNS4yIDE4LjgtMzQuMiAxOC44LTU1LjIgMC00NS45LTM3LjItODMuMS04My4xLTgzLjFzLTgzLjEgMzcuMi04My4xIDgzLjFjMCAxNi4zIDQuNyAzMS41IDEyLjggNDQuMy0xLjIgMS4xLTIuNiAyLjEtNC4xIDIuOS0xNC4zIDcuOC0yNiggMTQuOS0zNi4yIDIwLjJDMTA5LjMgMTIxLjUgNDcuNiA4OC4xIDQ3LjYgNjUuNnMxOC4xLTQwLjYgNDAuNi00MC42QzEwOS4zIDI1IDc3IDQzLjEgNzcgNjUuNnMzMi4zIDQwLjYgMzIuMyA0MC42UzE3MC4xIDI1IDQ3LjYgMjV6Ii8+PC9zdmc+" alt="heart">
 
-<!-- Música -->
 <audio id="audio-control" loop>
   <source src="mi-vida-entera.mp3" type="audio/mpeg">
-  Tu navegador no soporta el audio.
 </audio>
 
 <script>
@@ -102,14 +99,9 @@
       cursor.style.top = `${e.clientY - 16}px`;
       cursor.style.transform = `scale(${1 + Math.sin(Date.now()/300)*0.05})`;
     });
-    document.addEventListener('mousedown', () => cursor.style.transform = 'scale(0.8)');
-    document.addEventListener('mouseup', () => {
-      cursor.style.transform = 'scale(1.1)';
-      setTimeout(() => cursor.style.transform = 'scale(1)', 100);
-    });
   }
 
-  const texts = ["TE QUIERO 🥺💖", "TE AMO 💘"];
+  const texts = ["TE AMO TYRA 💘💖"];
   const baseFontSize = isTouchDevice ? 24 : 42;
   const columns = Math.floor(canvas.width / (baseFontSize * 2));
   const drops = new Array(columns).fill(1);
@@ -123,7 +115,7 @@
     for (let i = 0; i < drops.length; i++) {
       const x = i * baseFontSize * 2;
       const y = drops[i] * baseFontSize;
-      const text = texts[Math.floor(Math.random() * texts.length)];
+      const text = texts[0];
 
       ctx.shadowColor = "rgba(255, 182, 193, 0.9)";
       ctx.shadowBlur = 20;
@@ -157,7 +149,7 @@
       ctx.fillStyle = p.color;
       ctx.shadowColor = p.color;
       ctx.shadowBlur = 15;
-      ctx.fillText("TE QUIERO 🥺💖", p.x, p.y);
+      ctx.fillText("TE AMO TYRA 💘💖", p.x, p.y);
       ctx.shadowBlur = 0;
 
       p.x += p.vx;
@@ -179,9 +171,6 @@
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    const columns = Math.floor(canvas.width / (baseFontSize * 2));
-    drops.length = columns;
-    drops.fill(1);
   });
 </script>
 </body>
